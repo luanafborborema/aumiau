@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aumiau - Minha Conta</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="imagens/logoaumiau.png" alt="Logo Aumiau" width="200px" style="border-radius: 5px;">
+        <ul>
+            <li><a href="index.html">Página Inicial</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="login.html">Minha Conta</a></li>
+            <li><a href="contato.html">Fale conosco!</a></li>
+            <li><img src="imagens/carrinho.png" alt="Carrinho de Compras"></li>
+        </ul>
+    </header>
+
+    <main class="pagina-login-registro">
+        <div class="container-form" id="login-container">
+            <h2>Acessar Minha Conta</h2>
+            <p>Bem-vindo de volta! Faça login para continuar.</p>
+            <form action="#" method="POST">
+                <div class="form-grupo">
+                    <label for="login-email">E-mail:</label>
+                    <input type="email" id="login-email" name="login-email" placeholder="seuemail@exemplo.com" required>
+                </div>
+                <div class="form-grupo">
+                    <label for="login-senha">Senha:</label>
+                    <input type="password" id="login-senha" name="login-senha" placeholder="Sua senha" required>
+                </div>
+                <button type="submit" class="botao-form">Entrar</button>
+                <p class="texto-alternativo">Não tem uma conta? <a href="#registro-container" onclick="mostrarRegistro()">Crie uma agora!</a></p>
+            </form>
+        </div>
+
+        <div class="container-form" id="registro-container" style="display: none;"> <!-- Inicialmente oculto -->
+            <h2>Criar Nova Conta</h2>
+            <p>É rapidinho! Preencha os campos abaixo para se cadastrar.</p>
+            <form action="#" method="POST">
+                <div class="form-grupo">
+                    <label for="registro-nome">Nome Completo:</label>
+                    <input type="text" id="registro-nome" name="registro-nome" placeholder="Seu nome completo" required>
+                </div>
+                <div class="form-grupo">
+                    <label for="registro-email">E-mail:</label>
+                    <input type="email" id="registro-email" name="registro-email" placeholder="seuemail@exemplo.com" required>
+                </div>
+                <div class="form-grupo">
+                    <label for="registro-senha">Crie uma Senha:</label>
+                    <input type="password" id="registro-senha" name="registro-senha" placeholder="Mínimo 6 caracteres" required>
+                </div>
+                <div class="form-grupo">
+                    <label for="registro-confirma-senha">Confirme sua Senha:</label>
+                    <input type="password" id="registro-confirma-senha" name="registro-confirma-senha" placeholder="Repita a senha" required>
+                </div>
+                <button type="submit" class="botao-form">Criar Conta</button>
+                <p class="texto-alternativo">Já tem uma conta? <a href="#login-container" onclick="mostrarLogin()">Faça login!</a></p>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 Aumiau. Todos os direitos reservados.</p>
+            <p>Feito com <span class="coracao-footer">❤</span> para o seu pet!</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script simples para alternar entre os formulários
+        const loginContainer = document.getElementById('login-container');
+        const registroContainer = document.getElementById('registro-container');
+
+        function mostrarRegistro() {
+            loginContainer.style.display = 'none';
+            registroContainer.style.display = 'flex'; // Usar 'flex' para manter o layout do container
+        }
+
+        function mostrarLogin() {
+            registroContainer.style.display = 'none';
+            loginContainer.style.display = 'flex'; // Usar 'flex' para manter o layout do container
+        }
+
+        // Verifica se há um hash na URL para mostrar o formulário correto ao carregar
+        if (window.location.hash === '#registro-container') {
+            mostrarRegistro();
+        } else {
+            mostrarLogin(); // Garante que o login seja o padrão
+        }
+    </script>
+</body>
+</html>
