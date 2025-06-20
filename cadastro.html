@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aumiau - Cadastro de Produto</title>
+    <!-- Link para o seu arquivo CSS que já tem todos os estilos -->
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="imagens/logoaumiau.png" alt="Logo Aumiau" width="200px" style="border-radius: 5px;">
+        <ul>
+            <li><a href="index.html">Página Inicial</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="login.html">Minha Conta</a></li>
+            <li><a href="contato.html">Fale conosco!</a></li>
+            <li><img src="imagens/carrinho.png" alt="Carrinho de Compras"></li>
+        </ul>
+    </header>
+
+    <main class="pagina-login-registro">
+        <div class="container-form">
+            <h2>Cadastro de Novo Produto</h2>
+            <p>Preencha todos os dados abaixo para cadastrar um novo item no sistema.</p>
+            
+            <!-- O formulário completo do CADASTRO 1, agora com as classes do CADASTRO 2 -->
+            <form action="/salvar-produto" method="POST" enctype="multipart/form-data">
+                
+                <!-- Seção 1: Informações Gerais e Identificação -->
+                <div class="form-grupo">
+                    <label for="nome_produto">Nome do Produto:</label>
+                    <input type="text" id="nome_produto" name="nome_produto" required placeholder="Ex: Ração Seca Royal Canin Filhotes">
+                </div>
+
+                <div class="form-grupo">
+                    <label for="sku">SKU (Código Interno):</label>
+                    <input type="text" id="sku" name="sku" required placeholder="Ex: RC-FILHOTES-PP-3KG">
+                </div>
+
+                <div class="form-grupo">
+                    <label for="codigo_barras">Código de Barras (EAN/GTIN):</label>
+                    <input type="text" id="codigo_barras" name="codigo_barras" placeholder="Ex: 7891234567890">
+                </div>
+
+                <div class="form-grupo">
+                    <label for="status_produto">Status do Produto:</label>
+                    <select id="status_produto" name="status_produto" required>
+                        <option value="">Selecione o status</option>
+                        <option value="ativo">Ativo</option>
+                        <option value="inativo">Inativo</option>
+                    </select>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="marca">Marca/Fabricante:</label>
+                    <input type="text" id="marca" name="marca" required placeholder="Ex: Royal Canin">
+                </div>
+
+                <!-- Seção 2: Classificação e Categorias -->
+                <div class="form-grupo">
+                    <label for="tipo_principal">Tipo Principal de Produto:</label>
+                    <select id="tipo_principal" name="tipo_principal" required>
+                        <option value="">Selecione o tipo principal</option>
+                        <option value="racao">Ração</option>
+                        <option value="brinquedo">Brinquedo</option>
+                    </select>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="animal_destinado">Animal Destinado:</label>
+                    <select id="animal_destinado" name="animal_destinado" required>
+                        <option value="">Selecione o animal</option>
+                        <option value="cachorro">Cachorro</option>
+                        <option value="gato">Gato</option>
+                        <option value="ambos">Ambos</option>
+                    </select>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="categoria_especifica">Categoria Específica:</label>
+                    <select id="categoria_especifica" name="categoria_especifica" required>
+                        <option value="">Selecione a categoria específica</option>
+                    </select>
+                </div>
+
+                <!-- Seção 3: Descrição e Mídia -->
+                <div class="form-grupo">
+                    <label for="descricao_curta">Descrição Curta (para listagens):</label>
+                    <input type="text" id="descricao_curta" name="descricao_curta" required placeholder="Resumo conciso do produto">
+                </div>
+
+                <div class="form-grupo">
+                    <label for="descricao_completa">Descrição Completa:</label>
+                    <textarea id="descricao_completa" name="descricao_completa" rows="5" required placeholder="Detalhes completos, benefícios, ingredientes, etc."></textarea>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="imagens_produto">Imagens do Produto (selecione várias):</label>
+                    <input type="file" id="imagens_produto" name="imagens_produto[]" multiple accept="image/*" required>
+                </div>
+
+                <!-- Seção 4: Preço e Estoque -->
+                <div class="form-grupo">
+                    <label for="preco_venda">Preço de Venda (R$):</label>
+                    <input type="number" id="preco_venda" name="preco_venda" step="0.01" required placeholder="Ex: 99.90">
+                </div>
+
+                <div class="form-grupo">
+                    <label for="preco_promocional">Preço Promocional (Opcional):</label>
+                    <input type="number" id="preco_promocional" name="preco_promocional" step="0.01" placeholder="Ex: 89.90">
+                </div>
+
+                <div class="form-grupo" id="quantidade_estoque_group">
+                    <label for="quantidade_estoque">Quantidade em Estoque:</label>
+                    <input type="number" id="quantidade_estoque" name="quantidade_estoque" required min="0" value="0">
+                </div>
+
+                <!-- Seção 5: Logística -->
+                <div class="form-grupo">
+                    <label for="peso">Peso do Pacote (kg):</label>
+                    <input type="number" id="peso" name="peso" step="0.001" required placeholder="Ex: 3.000 (para 3kg)">
+                </div>
+
+                <!-- ATRIBUTOS ESPECÍFICOS APARECERÃO AQUI -->
+                <!-- Atributos para Ração -->
+                <div id="atributos_especificos_racao" class="conditional-fields" style="display: none; border-top: 2px dashed #ff914d; margin-top: 20px; padding-top: 20px;">
+                    <h4>Atributos Específicos - Ração</h4>
+                    <div class="form-grupo">
+                        <label for="racao_sabor">Sabor:</label>
+                        <input type="text" id="racao_sabor" name="racao_sabor" placeholder="Ex: Frango e Arroz">
+                    </div>
+                    <div class="form-grupo">
+                        <label for="racao_tamanho_grao">Tamanho do Grão:</label>
+                         <select id="racao_tamanho_grao" name="racao_tamanho_grao">
+                            <option value="">Selecione</option>
+                            <option value="pequeno">Pequeno</option>
+                            <option value="medio">Médio</option>
+                            <option value="grande">Grande</option>
+                         </select>
+                    </div>
+                </div>
+
+                <!-- Atributos para Brinquedo -->
+                <div id="atributos_especificos_brinquedo" class="conditional-fields" style="display: none; border-top: 2px dashed #ff914d; margin-top: 20px; padding-top: 20px;">
+                     <h4>Atributos Específicos - Brinquedo</h4>
+                     <div class="form-grupo">
+                        <label for="brinquedo_material">Material Principal:</label>
+                        <input type="text" id="brinquedo_material" name="brinquedo_material" placeholder="Ex: Borracha atóxica, Pelúcia, Corda">
+                    </div>
+                     <div class="form-grupo">
+                        <label for="brinquedo_nivel_resistencia">Nível de Resistência:</label>
+                        <select id="brinquedo_nivel_resistencia" name="brinquedo_nivel_resistencia">
+                             <option value="">Selecione o nível</option>
+                             <option value="baixo">Baixo (Mordidas leves)</option>
+                             <option value="medio">Médio (Mordidas moderadas)</option>
+                             <option value="alto">Alto (Mordidas fortes)</option>
+                        </select>
+                     </div>
+                </div>
+                
+                <!-- Botão de Cadastro -->
+                <button type="submit" class="botao-form">Cadastrar Produto</button>
+
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 Aumiau. Todos os direitos reservados.</p>
+            <p>Feito com <span class="coracao-footer">❤</span> para o seu pet!</p>
+        </div>
+    </footer>
+
+<!-- ====================================================================== -->
+<!-- SCRIPT JAVASCRIPT - ESSENCIAL PARA A LÓGICA DO FORMULÁRIO -->
+<!-- ====================================================================== -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Selecionando os elementos do formulário
+        const tipoPrincipalSelect = document.getElementById('tipo_principal');
+        const animalDestinadoSelect = document.getElementById('animal_destinado');
+        const categoriaEspecificaSelect = document.getElementById('categoria_especifica');
+
+        const atributosRacaoDiv = document.getElementById('atributos_especificos_racao');
+        const atributosBrinquedoDiv = document.getElementById('atributos_especificos_brinquedo');
+
+        // Dados das categorias (isso viria de um banco de dados em um sistema real)
+        const categoriasData = {
+            'racao': {
+                'cachorro': ['Ração Seca', 'Ração Úmida', 'Petisco'],
+                'gato': ['Ração Seca', 'Ração Úmida', 'Petisco'],
+                'ambos': ['Petisco'] 
+            },
+            'brinquedo': {
+                'cachorro': ['Bola', 'Corda', 'Pelúcia', 'Mordedor', 'Interativo'],
+                'gato': ['Varinha', 'Bola com Guizo', 'Arranhador', 'Pelúcia', 'Interativo'],
+                'ambos': ['Bola', 'Pelúcia', 'Interativo']
+            }
+        };
+
+        // Função para atualizar as categorias específicas
+        function updateCategorias() {
+            const tipoPrincipal = tipoPrincipalSelect.value;
+            const animalDestinado = animalDestinadoSelect.value;
+
+            // Limpa as opções atuais
+            categoriaEspecificaSelect.innerHTML = '<option value="">Selecione a categoria</option>';
+            categoriaEspecificaSelect.disabled = true;
+
+            if (tipoPrincipal && animalDestinado && categoriasData[tipoPrincipal] && categoriasData[tipoPrincipal][animalDestinado]) {
+                const categorias = categoriasData[tipoPrincipal][animalDestinado];
+                categorias.forEach(categoria => {
+                    const option = document.createElement('option');
+                    option.value = categoria.toLowerCase().replace(' ', '_'); // ex: 'racao_seca'
+                    option.textContent = categoria;
+                    categoriaEspecificaSelect.appendChild(option);
+                });
+                categoriaEspecificaSelect.disabled = false;
+            }
+            showHideAtributosEspecificos(); // Atualiza os campos extras
+        }
+
+        // Função para mostrar/esconder os atributos específicos
+        function showHideAtributosEspecificos() {
+            const tipoPrincipal = tipoPrincipalSelect.value;
+
+            // Esconde todos os blocos primeiro
+            atributosRacaoDiv.style.display = 'none';
+            atributosBrinquedoDiv.style.display = 'none';
+
+            // Mostra o bloco relevante
+            if (tipoPrincipal === 'racao') {
+                atributosRacaoDiv.style.display = 'block';
+            } else if (tipoPrincipal === 'brinquedo') {
+                atributosBrinquedoDiv.style.display = 'block';
+            }
+        }
+
+        // Adiciona os "escutadores" de eventos para quando o usuário mudar uma opção
+        tipoPrincipalSelect.addEventListener('change', updateCategorias);
+        animalDestinadoSelect.addEventListener('change', updateCategorias);
+
+        // Executa as funções na carga da página para configurar o estado inicial
+        updateCategorias();
+    });
+</script>
+
+</body>
+</html>

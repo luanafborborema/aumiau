@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aumiau - Fale Conosco</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> <!-- Adicionei a fonte Poppins aqui -->
+</head>
+<body>
+    <header>
+        <img src="imagens/logoaumiau.png" alt="Logo Aumiau" width="200px" style="border-radius: 5px;">
+        <ul>
+            <li><a href="index.html">Página Inicial</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="login.html">Minha Conta</a></li>
+            <li><a href="contato.html">Fale conosco!</a></li>
+            <li><img src="imagens/carrinho.png" alt="Carrinho de Compras"></li>
+        </ul>
+    </header>
+
+    <main class="pagina-contato">
+        <div class="contato-container">
+            <h2>Entre em Contato</h2>
+            <p>Tem alguma dúvida, sugestão ou precisa de ajuda? Preencha o formulário abaixo e nossa equipe entrará em contato o mais breve possível!</p>
+            
+            <form action="#" method="POST">
+                <div class="form-grupo">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="email">Seu Melhor E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="assunto">Assunto:</label>
+                    <input type="text" id="assunto" name="assunto" required>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="mensagem">Sua Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+                </div>
+
+                <button type="submit" class="botao-enviar">Enviar Mensagem</button>
+            </form>
+        </div>
+
+        <div class="info-contato">
+            <h3>Outras Formas de Contato</h3>
+            <p><img src="imagens/icone-telefone.png" alt="Telefone" class="icone-info"> (00) 4444-5555</p>
+            <p><img src="imagens/icone-email.png" alt="Email" class="icone-info"> contato@aumiau.com.br</p>
+            <p><img src="imagens/icone-local.png" alt="Endereço" class="icone-info"> Avenida Civica, 475 - IFPR </p>
+            <h4>Horário de Atendimento:</h4>
+            <p>Segunda a Sexta: 9h às 18h</p>
+            <p>Sábado: 9h às 13h</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 Aumiau. Todos os direitos reservados.</p>
+            <p>Feito com <span class="coracao-footer">❤</span> para o seu pet!</p>
+            <!-- Opcional: Links para redes sociais ou outras páginas -->
+            <!--
+            <div class="footer-links">
+                <a href="#">Facebook</a> |
+                <a href="#">Instagram</a> |
+                <a href="contato.html">Fale Conosco</a>
+            </div>
+            -->
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,567 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffdbc5;
+  }
+  
+  header {
+    background-color: #fff3e6;
+    padding: 20px;
+    margin: 30px;
+    border: 3px solid #ff914d;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li a,
+  header ul li a {
+    text-decoration: none;
+    color: #ff914d;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  /* Ícones do menu */
+  header ul li img {
+    width: 40px;
+  }
+  
+  /* Botão "Fale conosco!" com fundo verde */
+  header ul li:last-child a {
+    background-color: #2e7d32; /* Verde mais forte e agradável */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  /* Título dos produtos */
+  .produtos-destaque {
+    text-align: center;
+    color: green;
+    margin: 20px;
+  }
+  
+  /* Cartão de produto */
+  .produto-card {
+    display: inline-block;
+    background-color: #fff3e6;
+    border: 5px solid #4CAF50;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 10px;
+    width: 200px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    vertical-align: top;
+  }
+  
+  /* Imagem do produto */
+  .produto-card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Nome do produto */
+  .produto-card h4 {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #000;
+  }
+  
+  /* Valor e carrinho lado a lado */
+  .preco-carrinho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  /* Valor do produto */
+  .preco {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  /* Ícone do carrinho proporcional */
+  .icone-carrinho {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+
+
+  .banner{
+    width: 100%;
+  }
+ 
+
+  /* Estilos para a Página de Contato */
+.pagina-contato {
+  display: flex; /* Para colocar o formulário e as infos lado a lado em telas maiores */
+  flex-wrap: wrap; /* Permite quebrar a linha em telas menores */
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+  margin: 30px;
+  gap: 30px; /* Espaço entre o formulário e as infos */
+}
+
+.contato-container, .info-contato {
+  background-color: #fff3e6; /* Mesmo fundo do header e cards */
+  padding: 25px;
+  border: 3px solid #ff914d; /* Borda laranja como o header */
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave como os cards */
+  flex-basis: 45%; /* Cada um ocupa cerca de 45% do espaço, permitindo que fiquem lado a lado */
+  min-width: 300px; /* Largura mínima antes de quebrar a linha */
+  margin-bottom: 20px; /* Espaçamento inferior caso quebrem a linha */
+}
+
+.contato-container h2, .info-contato h3, .info-contato h4 {
+  color: green; /* Títulos em verde, como .produtos-destaque */
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.info-contato h4 {
+  font-size: 18px;
+  margin-top: 25px;
+}
+
+.contato-container p {
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-grupo {
+  margin-bottom: 20px;
+}
+
+.form-grupo label {
+  display: block;
+  color: #ff914d; /* Cor laranja para os labels */
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.form-grupo input[type="text"],
+.form-grupo input[type="email"],
+.form-grupo textarea {
+  width: calc(100% - 22px); /* Ajusta para padding e borda */
+  padding: 10px;
+  border: 2px solid #ff914d; /* Borda laranja */
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  background-color: #fff; /* Fundo branco para campos */
+  color: #333;
+}
+
+.form-grupo input[type="text"]:focus,
+.form-grupo input[type="email"]:focus,
+.form-grupo textarea:focus {
+  outline: none;
+  border-color: #e6732e; /* Laranja mais escuro no foco */
+  box-shadow: 0 0 5px rgba(255, 145, 77, 0.5);
+}
+
+.form-grupo textarea {
+  resize: vertical; /* Permite redimensionar apenas verticalmente */
+}
+
+.botao-enviar {
+  background-color: #2e7d32; /* Mesmo verde do botão "Fale conosco!" no header */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  display: block; /* Para centralizar com margin auto ou ocupar largura total */
+  width: 100%; /* Ocupa toda a largura do container do formulário */
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.botao-enviar:hover {
+  background-color: #1e5722; /* Verde mais escuro no hover */
+}
+
+/* Estilos para a seção de informações de contato */
+.info-contato p {
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.icone-info {
+  width: 24px; /* Tamanho dos ícones de informação */
+  height: 24px;
+  margin-right: 10px;
+  object-fit: contain;
+  filter: invert(56%) sepia(79%) saturate(519%) hue-rotate(354deg) brightness(102%) contrast(101%); /* Tentativa de deixar o ícone laranja */
+  /* Se os seus ícones já forem laranjas, remova o 'filter' */
+}
+
+/* Ajustes para telas menores (opcional, mas recomendado) */
+@media (max-width: 768px) {
+  .pagina-contato {
+    flex-direction: column; /* Coloca os blocos um abaixo do outro */
+    align-items: center;
+  }
+  .contato-container, .info-contato {
+    flex-basis: 90%; /* Ocupa mais da largura disponível */
+    width: 90%;
+  }
+}
+
+
+
+
+/* --- ESTILOS PARA PÁGINA DE LOGIN/REGISTRO --- */
+
+.pagina-login-registro {
+  display: flex; /* Para centralizar os containers de formulário */
+  flex-direction: column; /* Empilha os containers se ambos estiverem visíveis (não é o caso aqui, mas bom para estrutura) */
+  align-items: center; /* Centraliza os containers na página */
+  justify-content: center;
+  padding: 40px 20px; /* Espaçamento interno da página */
+  min-height: calc(100vh - 150px - 150px); /* Ajustar conforme altura do header e footer */
+}
+
+.container-form {
+  background-color: #fff3e6;    /* Mesmo fundo do header e cards */
+  padding: 30px;
+  border: 3px solid #ff914d;    /* Borda laranja como o header */
+  border-radius: 15px;          /* Bordas arredondadas */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  width: 100%;
+  max-width: 450px; /* Largura máxima do formulário */
+  margin-bottom: 30px; /* Espaço se ambos fossem visíveis e empilhados, ou para o footer */
+  display: flex; /* Para alinhar itens internos */
+  flex-direction: column; /* Empilha os elementos do formulário */
+  text-align: center; /* Centraliza o texto dos parágrafos e títulos */
+}
+
+/* Se você quiser que os dois formulários fiquem lado a lado em telas maiores: */
+/*
+@media (min-width: 992px) {
+  .pagina-login-registro {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  .container-form {
+    width: 45%;
+    margin-bottom: 0;
+  }
+}
+*/
+
+.container-form h2 {
+  color: green; /* Títulos em verde */
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.container-form p {
+  color: #555;
+  margin-bottom: 25px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* .form-grupo já foi definido na página de contato, será reutilizado */
+/* Se precisar de ajustes específicos para esta página, pode criar: */
+/*
+.container-form .form-grupo label {
+  color: #ff914d;
+}
+.container-form .form-grupo input {
+  border-color: #ff914d;
+}
+*/
+
+.botao-form {
+  background-color: #2e7d32; /* Verde do botão "Fale conosco!" */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.botao-form:hover {
+  background-color: #1e5722; /* Verde mais escuro no hover */
+}
+
+.texto-alternativo {
+  margin-top: 20px !important; /* Força a margem superior */
+  font-size: 15px !important;
+  color: #333 !important;
+}
+
+.texto-alternativo a {
+  color: #ff914d; /* Laranja para o link */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.texto-alternativo a:hover {
+  text-decoration: underline;
+  color: #e6732e; /* Laranja mais escuro no hover */
+}
+
+/* --- ESTILOS DO RODAPÉ --- */
+footer {
+  background-color: #fff3e6;    /* Mesmo fundo do header e cards */
+  padding: 25px 20px;           /* Mais padding vertical */
+  margin: 40px 30px 30px 30px;  /* Top, Right, Bottom, Left - alinhado com header */
+  border: 3px solid #ff914d;    /* Borda laranja como o header */
+  border-radius: 15px;          /* Bordas arredondadas como o header */
+  text-align: center;
+  font-family: 'Poppins', sans-serif; /* Garantir a fonte Poppins */
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para cima, para destacar */
+}
+
+.footer-content p {
+  margin: 8px 0; /* Espaçamento entre os parágrafos */
+  color: #333; /* Cor de texto padrão mais escura para boa legibilidade */
+  font-size: 15px;
+}
+
+.footer-content p:first-child { /* Estilo para o copyright */
+  color: green; /* Cor verde, como os títulos */
+  font-weight: bold;
+}
+
+.coracao-footer {
+  color: #ff914d; /* Coração laranja */
+  font-size: 1.2em; /* Um pouco maior para destaque */
+}
+
+
+.footer-links {
+  margin-top: 15px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #2e7d32; /* Verde escuro para os links, como o botão "Fale Conosco" */
+  margin: 0 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #ff914d; /* Laranja no hover */
+  text-decoration: underline;
+}
+
+/* === Estilos Específicos para o Formulário de Cadastro de Produto (Refinado) === */
+
+/* Estilo do formulário geral (o container branco maior dentro do .container) */
+/* Mantido similar à versão anterior, pode ser ajustado se o form wrapper
+   tiver outro estilo nas suas imagens */
+form {
+    background-color: #ffffff;
+    padding: 20px; /* Um pouco menos padding no form wrapper, mais nos blocos */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilo para os blocos de seção */
+.section-block {
+    background-color: #ffffff; /* Fundo branco para cada bloco */
+    padding: 25px; /* Padding interno generoso, como nos blocos das imagens */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    margin-bottom: 25px; /* Espaço entre os blocos */
+    border: 1px solid #eee; /* Borda clara para separar blocos */
+}
+
+/* Remove a sombra do bloco condicional se ele já tiver a sombra padrão */
+.conditional-fields.section-block {
+     box-shadow: none; /* Remove a sombra padrão do bloco, a borda tracejada já o destaca */
+     border: 1px dashed #28a745; /* Borda tracejada verde para os blocos condicionais */
+     background-color: #f0fff0; /* Fundo verde muito claro */
+}
+
+
+/* Estilos para o título principal do formulário (fora dos blocos de seção) */
+h1 {
+    color: #28a745; /* Cor verde */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+    /* Remove borda inferior se houver no style.css */
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Estilos para os títulos dentro dos blocos de seção */
+.section-block h2 {
+    color: #ff8c42; /* Cor laranja/pêssego */
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-top: 0; /* Remove margem superior do h2 dentro do bloco */
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    text-align: left;
+}
+
+/* Estilos para os grupos de formulário dentro dos blocos */
+.section-block .form-group {
+    margin-bottom: 18px;
+}
+
+.section-block .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #ff8c42; /* Cor laranja/pêssego para labels */
+    font-size: 1em;
+}
+
+/* Estilos para inputs, selects, textareas DENTRO dos blocos (usando .form-control) */
+.section-block .form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ffb380; /* Borda pêssego clara */
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fff;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Estilo ao focar nos campos DENTRO dos blocos */
+.section-block .form-control:focus {
+    border-color: #ff8c42;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 140, 66, 0.25);
+}
+
+/* Estilo para textarea DENTRO dos blocos */
+.section-block textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Estilo específico para input type="file" DENTRO dos blocos */
+.section-block input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ffb380;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: #fff8f2;
+    font-size: 1em;
+    cursor: pointer;
+    color: #555;
+}
+
+/* Estilo para o grupo de checkbox DENTRO dos blocos */
+.section-block .checkbox-group {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.section-block .checkbox-group label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 25px;
+    font-weight: normal;
+    color: #555;
+    cursor: pointer;
+}
+
+/* Estilo para o grupo de inputs de dimensão DENTRO dos blocos */
+.section-block .dimension-inputs {
+    display: flex;
+    gap: 15px;
+}
+
+.section-block .dimension-inputs input.form-control {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* Estilo para o botão de submit (fora dos blocos de seção, centralizado) */
+button.btn-submit { /* Usando uma classe dedicada para o botão de submit deste formulário */
+    display: block;
+    width: 100%;
+    max-width: 250px; /* Largura similar aos botões das fotos */
+    margin: 30px auto 0 auto; /* Centralizado horizontalmente */
+    padding: 15px 25px; /* Padding generoso */
+    background-color: #28a745; /* Cor verde */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em; /* Fonte um pouco maior */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra no botão */
+}
+
+button.btn-submit:hover {
+    background-color: #218838; /* Tom de verde um pouco mais escuro */
+}
+
+/* Ajuste para o link CSS do file input DENTRO dos blocos */
+.section-block input[type="file"]::file-selector-button {
+    font-weight: bold;
+    color: #ff8c42;
+    background-color: #fff0e6;
+    border: thin solid #ffb380;
+    border-radius: 4px;
+    padding: 0.5em 1em;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.section-block input[type="file"]::file-selector-button:hover {
+    background-color: #ffdfd1;
+}
+
+
+/* Estilo para o título dos blocos condicionais */
+.conditional-fields.section-block h2 {
+    color: #28a745; /* Título da seção condicional em verde */
+}
+
